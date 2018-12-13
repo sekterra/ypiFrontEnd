@@ -16,17 +16,18 @@ export default {
   },
   computed: {
     classes () {
-      const classes = this.addBackgroundColorClassChecks({
-        'circle-sm': this.small,
-        'circle-lg': this.medium,
-        'circle-xl': this.large,
-        'circle-ring': this.ring,
-        'circle-dot': this.dot,
-        'circle-pill': this.pill,
-        'theme--light': this.light,
-        'theme--dark': this.dark        
-      });
-      return classes;
+      // const classes = this.addBackgroundColorClassChecks({
+      //   'circle-sm': this.small,
+      //   'circle-lg': this.medium,
+      //   'circle-xl': this.large,
+      //   'circle-ring': this.ring,
+      //   'circle-dot': this.dot,
+      //   'circle-pill': this.pill,
+      //   'theme--light': this.light,
+      //   'theme--dark': this.dark        
+      // });
+      // return classes;
+      return null;
     }
   },
   render (h) {

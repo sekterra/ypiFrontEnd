@@ -9,7 +9,18 @@ import './theme/default.styl';
 import VeeValidate from 'vee-validate';
 // import colors from 'vuetify/es5/util/colors';
 import Truncate from 'lodash.truncate';
+
+/** import npm module **/
+import axios from 'axios';  // Promise based HTTP client for the browser and node.js
+import $ from 'jquery';
+/** /import npm module **/
+
+/** import js **/
+import backendConfig from '@/js/backendConfig.js';
+/** /import js **/
+
 Vue.config.productionTip = false;
+
 // Helpers
 // Global filters
 Vue.filter('truncate', Truncate);
@@ -36,7 +47,11 @@ Vue.use(Vuetify, {
 });
 // Bootstrap application components
 
-
+/** global variable in Vue app **/
+Vue.prototype.$http = axios;
+Vue.prototype.$backend = backendConfig;
+Vue.prototype.$j = $;
+/** /global variable in Vue app **/
 
 /* eslint-disable no-new */
 new Vue({

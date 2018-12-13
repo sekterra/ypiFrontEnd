@@ -34,7 +34,8 @@ module.exports = {
         'no-trailing-spaces': 0,    // 후행공백
         'no-undefined': 0,
         'no-void': 2,   // Disallow use of the void operator
-        'no-unused-vars': 1,    // Disallow Unused Variables
+        'no-var': 0,
+        'no-unused-vars': 0,    // Disallow Unused Variables
         'no-param-reassign': 0, // Disallow Reassignment of Function Parameters
         "space-before-function-paren": ["error", {  // Require or disallow a space before function parenthesis 
             "anonymous": "always",  // ex) function () {}

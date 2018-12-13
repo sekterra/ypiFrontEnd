@@ -74,7 +74,9 @@
 <script>
 import menu from '@/api/menu';
 import VuePerfectScrollbar from 'vue-perfect-scrollbar';
+import selectConfig from '@/js/selectConfig';
 export default {
+  /* attributes: name, components, props, data */
   name: 'app-drawer',
   components: {
     VuePerfectScrollbar,
@@ -105,14 +107,48 @@ export default {
       return this.$vuetify.options.extra.sideNav;
     }    
   },
+  //* Vue lifecycle: created, mounted, destroyed, etc */
   created () {
     window.getApp.$on('APP_DRAWER_TOGGLED', () => {
       this.drawer = (!this.drawer);
     });
   },
-  
-
+  beforeMount () {
+    this.getMenuList();
+  },
+  //* methods */
   methods: {
+    /**
+     * mount 되기 전에 메뉴를 가져옴
+     */
+    getMenuList () {
+      // this.$http.defaults.headers['content-type'] = 'application/json;charset=utf-8';
+      var url = this.$backend.getUrl(selectConfig.menus.list.url);
+      // this.$j.ajax({
+      //   type: 'GET',
+      //   async: true,
+      //   url: url,
+      //   dataType: 'json',
+      //   contentType: 'application/json;charset=utf-8', // 필수,
+      //   // traditional: true,
+      //   // cache: false,
+      //   beforeSend: function (xhr) {
+      //     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+      //   },
+      //   success: function (xhr, status, req) {
+      //     console.log('::::::: success : ' + JSON.stringify(xhr));
+      //   },
+      //   error: function (xhr, status, err) {
+      //     console.log(':::::::::::::::: error:' + JSON.stringify(xhr));
+      //   }
+      // });
+      this.$http.get(url).then((_result) => {
+        console.log(':::::::::' + JSON.stringify(_result));
+      }).catch((_error) => {
+        // handle error
+        console.log(_error);
+      });
+    },
     genChildTarget (item, subItem) {
       if (subItem.href) return;
       if (subItem.component) {
@@ -122,6 +158,7 @@ export default {
       }
       return { name: `${item.group}/${(subItem.name)}` };
     },
+
   }
 };
 </script>
