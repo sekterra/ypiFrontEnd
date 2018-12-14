@@ -1,5 +1,7 @@
+/**
+ * Vue Router 에서 참고하는 routing list
+ */
 export default [
-
   {
     path: '*',
     meta: {
@@ -96,7 +98,19 @@ export default [
       /* webpackMode: "lazy-once" */
       `@/pages/Media.vue`
     )
-  },  
+  },
+  // api 표시 페이지
+  {
+    path: '/apiPage/:id',
+    meta: { breadcrumb: true },
+    name: 'apiPage',
+    props: (route) => ({ type: route.query.type }),
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/api/apiPage.vue`
+    )
+  },
   {
     path: '/chat',
     meta: {

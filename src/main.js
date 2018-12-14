@@ -12,7 +12,8 @@ import Truncate from 'lodash.truncate';
 
 /** import npm module **/
 import axios from 'axios';  // Promise based HTTP client for the browser and node.js
-import $ from 'jquery';
+import lodash from 'lodash';  // A modern JavaScript utility library delivering modularity, performance & extras
+import format from 'string-format'; // string-format is a small JavaScript library for formatting strings, based on Python's 
 /** /import npm module **/
 
 /** import js **/
@@ -50,7 +51,8 @@ Vue.use(Vuetify, {
 /** global variable in Vue app **/
 Vue.prototype.$http = axios;
 Vue.prototype.$backend = backendConfig;
-Vue.prototype.$j = $;
+Vue.prototype.$_ = lodash;
+Vue.prototype.$format = format;
 /** /global variable in Vue app **/
 
 /* eslint-disable no-new */

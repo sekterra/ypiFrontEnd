@@ -53,18 +53,23 @@
             <v-subheader v-else-if="item.header" :key="i">{{ item.header }}</v-subheader>
             <v-divider v-else-if="item.divider" :key="i"></v-divider>
             <!--top-level link-->
-            <v-list-tile v-else :to="!item.href ? { name: item.name } : null" :href="item.href" ripple="ripple" :disabled="item.disabled" :target="item.target" rel="noopener" :key="item.name">
+            <v-list-tile 
+              v-else :to="item.path ? item.path : !item.href ? { name: item.name } : null"
+              :href="item.href"
+              ripple="ripple" 
+              :disabled="item.disabled" 
+              :target="item.target" 
+              rel="noopener" 
+              :key="item.name">
               <v-list-tile-action v-if="item.icon">
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>{{ item.title }}</v-list-tile-title>
               </v-list-tile-content>
-              <!-- <v-circle class="white--text pa-0 chip--x-small" v-if="item.badge" :color="item.color || 'primary'" disabled="disabled">{{ item.badge }}</v-circle> -->
               <v-list-tile-action v-if="item.subAction">
                 <v-icon class="success--text">{{ item.subAction }}</v-icon>
               </v-list-tile-action>
-              <!-- <v-circle class="caption blue lighten-2 white--text mx-0" v-else-if="item.chip" label="label" small="small">{{ item.chip }}</v-circle> -->
             </v-list-tile>
         </template>
       </v-list>        
@@ -90,7 +95,7 @@ export default {
   data: () => ({
     mini: false,
     drawer: true,
-    menus: menu,
+    menus: null,
     scrollSettings: {
       maxScrollbarLength: 160
     }    
@@ -122,28 +127,20 @@ export default {
      * mount 되기 전에 메뉴를 가져옴
      */
     getMenuList () {
-      // this.$http.defaults.headers['content-type'] = 'application/json;charset=utf-8';
       var url = this.$backend.getUrl(selectConfig.menus.list.url);
-      // this.$j.ajax({
-      //   type: 'GET',
-      //   async: true,
-      //   url: url,
-      //   dataType: 'json',
-      //   contentType: 'application/json;charset=utf-8', // 필수,
-      //   // traditional: true,
-      //   // cache: false,
-      //   beforeSend: function (xhr) {
-      //     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-      //   },
-      //   success: function (xhr, status, req) {
-      //     console.log('::::::: success : ' + JSON.stringify(xhr));
-      //   },
-      //   error: function (xhr, status, err) {
-      //     console.log(':::::::::::::::: error:' + JSON.stringify(xhr));
-      //   }
-      // });
+      var self = this;
+      this.menus = this.$_.clone(menu);
       this.$http.get(url).then((_result) => {
-        console.log(':::::::::' + JSON.stringify(_result));
+        var menus = _result.data.content;
+        this.$_.forEach(menus, (_item) => {
+          self.menus.push({
+            title: _item.name,
+            group: 'apps',
+            icon: 'edit',
+            name: 'apiPage',
+            path: '/apiPage/' + _item.id
+          });
+        });
       }).catch((_error) => {
         // handle error
         console.log(_error);

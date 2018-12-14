@@ -6,11 +6,14 @@ let selectConfig = {
     list: {
       url: '/menus',
       // param: {}
+    },
+    get: {
+      url: '/menus/{0}'
     }
   },
   apiContents: {
     list: {
-      url: '/menus',
+      url: '/menus/{0}/api_contents',
       // param: {}
     }
   }

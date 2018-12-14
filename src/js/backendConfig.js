@@ -12,7 +12,6 @@ backendConfig.getHttpAddress = () => {
 };
 
 backendConfig.getUrl = (_pageUrl) => {
-  console.log(typeof _pageUrl);
   if (!_pageUrl || typeof _pageUrl !== 'string') {
     window.alert('[개발자용 메시지]: 유효한 주소가 아닙니다.');
     return '';

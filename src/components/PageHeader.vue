@@ -13,7 +13,10 @@
     </v-breadcrumbs>
     <v-spacer></v-spacer>
     <div class="page-header-right">
-      <v-btn icon>
+      <v-btn 
+      icon
+      @click.stop="refresh"
+      >
         <v-icon class="text--secondary">refresh</v-icon>
       </v-btn>
     </div>
@@ -50,6 +53,11 @@ export default {
       });
       return breadcrumbs;
     },    
+  },
+  methods: {
+    refresh () {
+      this.$router.go(0);
+    }
   }
 };
 </script>
