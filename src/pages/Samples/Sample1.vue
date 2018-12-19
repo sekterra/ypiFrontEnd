@@ -59,6 +59,19 @@
                   v-model="demo.usable"
                 ></v-switch>
               </v-flex>
+              <v-flex xs12 sm6>
+                <y-datepicker 
+                  :editable="editable"
+                  label="날짜"
+                  name="date"
+                  v-model="demo.date"
+                  default-type="today"
+                  v-validate="'required'"
+                  data-vv-name="date"
+                  :error-msg="errors.first('date')"
+                >
+                </y-datepicker>
+              </v-flex>
               <!-- 버튼을 우측에 위치 하는 예제-->
               <v-flex xs12 class="text-xs-right">
                 <y-btn
@@ -141,6 +154,7 @@ export default {
       deptPk: null,
       comboItems: null,
       usable: true,
+      date: null
     },
     editable: true,
     isSubmit: false,

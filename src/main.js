@@ -21,10 +21,12 @@ import YDataTable from '@/components/YDataTable';
 import YText from '@/components/YText';
 import YSelect from '@/components/YSelect';
 import YBtn from '@/components/YBtn';
+import YDatepicker from '@/components/YDatepicker';
 /** /import custom vue component **/
 
 /** import js **/
 import backendConfig from '@/js/backendConfig.js';
+import comm from '@/js/common.js';
 /** /import js **/
 
 Vue.config.productionTip = false;
@@ -60,6 +62,8 @@ Vue.component(YDataTable.name, YDataTable);
 Vue.component(YText.name, YText);
 Vue.component(YSelect.name, YSelect);
 Vue.component(YBtn.name, YBtn);
+Vue.component(YDatepicker.name, YDatepicker);
+
 /** /Global Custom Component **/
 
 /** global variable in Vue app **/
@@ -67,6 +71,7 @@ Vue.prototype.$http = axios;
 Vue.prototype.$backend = backendConfig;
 Vue.prototype.$_ = lodash;
 Vue.prototype.$format = format;
+Vue.prototype.$comm = comm;
 /** /global variable in Vue app **/
 
 /* eslint-disable no-new */
