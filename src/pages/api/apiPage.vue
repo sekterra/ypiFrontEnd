@@ -51,7 +51,7 @@
             flat>
             <v-card-title>
               <span class="title">
-                {{title}}{{contents.length}}
+                {{title}}
               </span>
               <v-spacer></v-spacer>
               <v-btn
@@ -72,10 +72,9 @@
               >
               <v-text-field
               v-model="menu.name"
-              label="제목"
+              label="메뉴명"
               counter="50"
               clearable
-              single-line
               :autofocus="true"
               />
               <v-divider></v-divider>
@@ -246,15 +245,14 @@ export default {
         self.menu.id = Number(self.menu.id);
         self.menu.orderNo = Number(self.menu.orderNo);
         requestUrl = this.$backend.getUrl(baseUrl);
-        console.log(requestUrl);
         this.$http.put(requestUrl, self.menu).then((_result) => {
           baseUrl = this.$format(transactionConfig.apiContents.edit.url, _result.data.id, self.contents[0].id);
           requestUrl = this.$backend.getUrl(baseUrl);
-          console.log(JSON.stringify(self.contents[0]));
           self.$http.put(requestUrl, self.contents[0]).then((__result) => {
-            console.log(JSON.stringify(__result));
+            window.getApp.$emit('APP_REQUEST_SUCCESS', '성공적으로 저장되었습니다.');
+            this.$router.push(this.$route.path);
           }).catch((_error) => {
-            window.alert('update api content : ' + _error);
+            window.getApp.$emit('APP_REQUEST_ERROR', '저장 도중 에러가 발생하였습니다 : ' + _error);
           });
         }).catch((_error) => {
           window.alert('update menu : ' + _error);
@@ -264,14 +262,12 @@ export default {
         baseUrl = this.$format(transactionConfig.menus.insert.url);
         requestUrl = this.$backend.getUrl(baseUrl);
         this.$http.post(requestUrl, self.menu).then((_result) => {
-          console.log(JSON.stringify(_result));
           baseUrl = this.$format(transactionConfig.apiContents.insert.url, _result.data.id);
           requestUrl = this.$backend.getUrl(baseUrl);
-          console.log(JSON.stringify(self.contents[0]));
           self.$http.post(requestUrl, self.contents[0]).then((__result) => {
-            console.log(JSON.stringify(__result));
+            window.getApp.$emit('APP_REQUEST_SUCCESS', '성공적으로 저장되었습니다.');
           }).catch((_error) => {
-            window.alert('insert api content : ' + _error);
+            window.getApp.$emit('APP_REQUEST_ERROR', '저장 도중 에러가 발생하였습니다 : ' + _error);
           });
         }).catch((_error) => {
           window.alert('insert menu : ' + _error);

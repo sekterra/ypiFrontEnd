@@ -55,7 +55,69 @@ export default [
     // @error api response data
     callback: function (msg) {
       this.$message.success(msg);
+    },
+  },
+  /** 아래 부터 추가된 이벤트 **/
+  // axios 및 기타 요청 실패
+  {
+    name: 'APP_REQUEST_ERROR',
+    callback: function (_message) {
+      // snackbar에서 에러 표시
+      this.snackbar = {
+        show: true,
+        color: 'error',
+        text: _message
+      };
+
+      //  vue dialog에서 에러 표시
+      // this.dialog = {
+      //   show: true,
+      //   type: 'error',
+      //   text: _message
+      // }
     }
   },
+  // axios 및 기타 요청 설공
+  {
+    name: 'APP_REQUEST_SUCCESS',
+    callback: function (_message) {
+      // snackbar에서 에러 표시
+      this.snackbar = {
+        show: true,
+        color: 'success',
+        text: _message
+      };
 
+      //  vue dialog에서 에러 표시
+      // this.dialog = {
+      //   show: true,
+      //   type: 'error',
+      //   text: _message
+      // }
+    }
+  },
+  // 유효성 검사 오류
+  {
+    name: 'APP_VALID_ERROR',
+    callback: function (_message) {
+      // snackbar에서 에러 표시
+      this.snackbar = {
+        show: true,
+        color: 'warning',
+        text: _message
+      };
+    }
+  },
+  // axios 및 기타 요청 실패
+  {
+    name: 'APP_ON_READY',
+    callback: function () {
+      // snackbar에서 에러 표시
+      this.snackbar = {
+        show: true,
+        color: 'warning',
+        text: '해당 기능은 준비중입니다.'
+      };
+    }
+  },
 ];

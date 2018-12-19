@@ -32,7 +32,7 @@
           fixed
           >
           <theme-settings></theme-settings>
-        </v-navigation-drawer>        
+        </v-navigation-drawer>
       </v-app>
     </template>
     <template v-else>

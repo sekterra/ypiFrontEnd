@@ -16,6 +16,13 @@ import lodash from 'lodash';  // A modern JavaScript utility library delivering 
 import format from 'string-format'; // string-format is a small JavaScript library for formatting strings, based on Python's 
 /** /import npm module **/
 
+/** import custom vue component **/
+import YDataTable from '@/components/YDataTable';
+import YText from '@/components/YText';
+import YSelect from '@/components/YSelect';
+import YBtn from '@/components/YBtn';
+/** /import custom vue component **/
+
 /** import js **/
 import backendConfig from '@/js/backendConfig.js';
 /** /import js **/
@@ -47,6 +54,13 @@ Vue.use(Vuetify, {
   }
 });
 // Bootstrap application components
+
+/** Global Custom Component **/
+Vue.component(YDataTable.name, YDataTable);
+Vue.component(YText.name, YText);
+Vue.component(YSelect.name, YSelect);
+Vue.component(YBtn.name, YBtn);
+/** /Global Custom Component **/
 
 /** global variable in Vue app **/
 Vue.prototype.$http = axios;

@@ -77,7 +77,16 @@ export default [
       `@/pages/Dashboard.vue`
     )
   },
-
+  {
+    path: '/samples/sample1',
+    meta: { breadcrumb: true },
+    name: 'samples/sample1',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/Samples/Sample1.vue`
+    )
+  },
   // {
   //   path: '/calendar',
   //   meta: { breadcrumb: true },

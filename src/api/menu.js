@@ -6,26 +6,36 @@ const Menu =  [
     icon: 'dashboard',
     name: 'Dashboard',
   },
+  { header: '샘플코드' },
   {
-    title: 'Chat',
-    group: 'apps',
-    icon: 'chat_bubble',
-    target: '_blank',
-    name: 'Chat',
-  },
-  {
-    title: 'Inbox',
-    group: 'apps',
-    name: 'Mail',
-    target: '_blank',
-    icon: 'email',
-  },
-  {
-    title: 'Media',
-    group: 'apps',
-    name: 'Media',
-    icon: 'perm_media',
-  },
+    title: '샘플코드',
+    group: 'sample',
+    component: 'sample',
+    icon: 'web',
+    items: [
+      { name: 'sample1', title: '샘플1', component: 'samples/sample1' },
+    ]
+  },  
+  // {
+  //   title: 'Chat',
+  //   group: 'apps',
+  //   icon: 'chat_bubble',
+  //   target: '_blank',
+  //   name: 'Chat',
+  // },
+  // {
+  //   title: 'Inbox',
+  //   group: 'apps',
+  //   name: 'Mail',
+  //   target: '_blank',
+  //   icon: 'email',
+  // },
+  // {
+  //   title: 'Media',
+  //   group: 'apps',
+  //   name: 'Media',
+  //   icon: 'perm_media',
+  // },
   {
     title: 'Widgets',
     group: 'widgets',
@@ -39,7 +49,6 @@ const Menu =  [
       // { name: 'post', title: 'Post', component: 'components/widget-post' },
     ]
   },  
-  { header: 'UI Elements' },
   {
     title: 'General',
     group: 'components',
