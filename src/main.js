@@ -21,6 +21,7 @@ import YDataTable from '@/components/YDataTable';
 import YText from '@/components/YText';
 import YSelect from '@/components/YSelect';
 import YBtn from '@/components/YBtn';
+import YDatepicker from '@/components/YDatepicker';
 /** /import custom vue component **/
 
 /** import js **/
@@ -60,6 +61,8 @@ Vue.component(YDataTable.name, YDataTable);
 Vue.component(YText.name, YText);
 Vue.component(YSelect.name, YSelect);
 Vue.component(YBtn.name, YBtn);
+Vue.component(YDatepicker.name, YDatepicker);
+
 /** /Global Custom Component **/
 
 /** global variable in Vue app **/

@@ -15,7 +15,22 @@ const Menu =  [
     items: [
       { name: 'sample1', title: '샘플1', component: 'samples/sample1' },
     ]
-  },  
+  },
+  {
+    title: '보건',
+    group: 'health',
+    component: 'health',
+    icon: 'local_hospital',
+    items: [
+      { 
+        name: 'sample1', title: '샘플1', icon: 'local_offer', component: 'samples/sample1', items: [
+          { 
+            name: 'sample2', title: '샘플1', icon: 'local_offer', component: 'samples/sample2' 
+          }
+        ] 
+      },
+    ]
+  },
   // {
   //   title: 'Chat',
   //   group: 'apps',
