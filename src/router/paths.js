@@ -87,6 +87,16 @@ export default [
       `@/pages/Samples/Sample1.vue`
     )
   },
+  {
+    path: '/health/store',
+    meta: { breadcrumb: true },
+    name: 'health/store',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/Store.vue`
+    )
+  },
   // {
   //   path: '/calendar',
   //   meta: { breadcrumb: true },

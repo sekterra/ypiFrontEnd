@@ -16,6 +16,19 @@ const Menu =  [
       { name: 'sample1', title: '샘플1', component: 'samples/sample1' },
     ]
   },  
+  { header: '보건' },
+  {
+    title: '보건',
+    group: 'health',
+    component: 'health',
+    icon: 'web',
+    items: [
+      { name: 'healthCommon', title: '입고', component: 'health/healthCommon' },
+      { name: 'healthCounsel', title: '재고 조정', component: 'health/healthCounsel' },
+      { name: 'store', title: '입고', component: 'health/store' },
+      { name: 'stock', title: '재고 조정', component: 'health/stock' },
+    ]
+  }, 
   // {
   //   title: 'Chat',
   //   group: 'apps',

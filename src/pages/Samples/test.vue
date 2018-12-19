@@ -6,13 +6,21 @@
   *
   -->
 <template>
-  <div id="">
-    <v-container grid-list-xl fluid>
-      <v-layout row wrap>
-        <!-- TODO : 여기에 본문을 넣으세요 -->
+<div id="">
+  <v-container grid-list-xl fluid>
+      <v-layout row wrap fill-height>
+        <v-flex xs12 sm6>
+
+        </v-flex>
       </v-layout>
-    <v-container>
-  </div>
+      <v-layout row wrap fill-height>
+      <v-flex xs12 sm6>
+
+      </v-flex>
+      </v-layout>
+  </v-container>
+</div>
+
 </template>
 
 <script>
@@ -24,18 +32,19 @@ export default {
   data: () => ({
   }),
   //* Vue lifecycle: created, mounted, destroyed, etc */
-  beforeCreate () {
+  beforeCreate: () => {
   },
-  created () {
+  created: () => {
   },
-  beforeMount () {
+  beforeMount: () => {
   },
-  mounted () {
+  mounted: () => {
   },
-  beforeDestory () {
+  beforeDestory: () => {
   },
   //* methods */
   methods: {
   }
-};
+}
 </script>
+
