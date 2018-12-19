@@ -26,6 +26,7 @@ import YDatepicker from '@/components/YDatepicker';
 
 /** import js **/
 import backendConfig from '@/js/backendConfig.js';
+import comm from '@/js/common.js';
 /** /import js **/
 
 Vue.config.productionTip = false;
@@ -70,6 +71,7 @@ Vue.prototype.$http = axios;
 Vue.prototype.$backend = backendConfig;
 Vue.prototype.$_ = lodash;
 Vue.prototype.$format = format;
+Vue.prototype.$comm = comm;
 /** /global variable in Vue app **/
 
 /* eslint-disable no-new */

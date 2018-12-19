@@ -119,7 +119,7 @@ export default {
       datePickerMenu: null,
       vValue: null, // TODO : datepicker 내부 값, YYYY-MM-DD(ISO 표준) 형태의 값
       localFormattedDate: null, // TODO : 날짜 값을 표시하는 v-text-field에 표시되는 값으로 local date format 형태의 값(언어 설정 변경시 같이 변경됨)
-      locale: window.getApp.locale.datepicker
+      locale: 'ko-KR' // window.getApp.locale.datepicker
     };
   },
   computed: {
