@@ -15,17 +15,12 @@ const Menu =  [
     items: [
       { name: 'sample1', title: '샘플1', component: 'samples/sample1' },
     ]
-<<<<<<< HEAD
   },  
   { header: '보건' },
-=======
-  },
->>>>>>> e531761cfe911a36ca73d85025bccda2f1f3abf6
   {
     title: '보건',
     group: 'health',
     component: 'health',
-<<<<<<< HEAD
     icon: 'web',
     items: [
       { name: 'healthCommon', title: '입고', component: 'health/healthCommon' },
@@ -34,19 +29,16 @@ const Menu =  [
       { name: 'stock', title: '재고 조정', component: 'health/stock' },
     ]
   }, 
-=======
-    icon: 'local_hospital',
+  { header: '건진' },
+  {
+    title: '건진예약',
+    group: 'check',
+    component: 'check',
+    icon: 'web',
     items: [
-      { 
-        name: 'sample1', title: '샘플1', icon: 'local_offer', component: 'samples/sample1', items: [
-          { 
-            name: 'sample2', title: '샘플1', icon: 'local_offer', component: 'samples/sample2' 
-          }
-        ] 
-      },
+      { name: 'checkReserve', title: '건진예약', component: 'health/checkReserve' },
     ]
-  },
->>>>>>> e531761cfe911a36ca73d85025bccda2f1f3abf6
+  },  
   // {
   //   title: 'Chat',
   //   group: 'apps',

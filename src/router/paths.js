@@ -627,4 +627,14 @@ export default [
       `@/pages/widgets/List.vue`
     )
   },
+  {
+    path: '/health/checkReserve',
+    meta: { breadcrumb: true },
+    name: 'health/checkReserve',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/Health/CheckReserve.vue`
+    )
+  }
 ];
