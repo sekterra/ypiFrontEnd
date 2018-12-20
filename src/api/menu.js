@@ -29,18 +29,14 @@ const Menu =  [
       { name: 'stock', title: '재고 조정', component: 'health/stock' },
     ]
   }, 
-  // {
-  //   icon: 'local_hospital',
-  //   items: [
-  //     { 
-  //       name: 'sample1', title: '샘플1', icon: 'local_offer', component: 'samples/sample1', items: [
-  //         { 
-  //           name: 'sample2', title: '샘플1', icon: 'local_offer', component: 'samples/sample2' 
-  //         }
-  //       ] 
-  //     },
-  //   ]
-  // },
+  {
+    icon: 'local_hospital',
+    items: [
+      { name: 'ExaminationType', title: '건진종류', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationType' },
+      { name: 'ExaminationExamination', title: '건진검사', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationExamination' },
+      { name: 'ExaminationItem', title: '건진항목', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationItem' },
+    ]
+  },
   // {
   //   title: 'Chat',
   //   group: 'apps',

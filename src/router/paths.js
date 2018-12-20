@@ -657,4 +657,34 @@ export default [
       `@/pages/widgets/List.vue`
     )
   },
+  {
+    path: '/health/ExaminationMaster/ExaminationType',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationType',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationType.vue`
+    )
+  },
+  {
+    path: '/health/ExaminationMaster/ExaminationExamination',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationExamination',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationExamination.vue`
+    )
+  },
+  {
+    path: '/health/ExaminationMaster/ExaminationItem',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationItem',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationItem.vue`
+    )
+  },
 ];
