@@ -16,19 +16,16 @@ const Menu =  [
       { name: 'sample1', title: '샘플1', component: 'samples/sample1' },
     ]
   },
+  { header: '보건' },
   {
     title: '보건',
     group: 'health',
     component: 'health',
     icon: 'local_hospital',
     items: [
-      { 
-        name: 'sample1', title: '샘플1', icon: 'local_offer', component: 'samples/sample1', items: [
-          { 
-            name: 'sample2', title: '샘플1', icon: 'local_offer', component: 'samples/sample2' 
-          }
-        ] 
-      },
+      { name: 'ExaminationType', title: '건진종류', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationType' },
+      { name: 'ExaminationExamination', title: '건진검사', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationExamination' },
+      { name: 'ExaminationItem', title: '건진항목', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationItem' },
     ]
   },
   // {
