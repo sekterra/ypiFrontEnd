@@ -88,6 +88,26 @@ export default [
     )
   },
   {
+    path: '/health/healthCommon',
+    meta: { breadcrumb: true },
+    name: 'health/healthCommon',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/HealthCommon.vue`
+    )
+  },
+  {
+    path: '/health/healthCounsel',
+    meta: { breadcrumb: true },
+    name: 'health/healthCounsel',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/HealthCounsel.vue`
+    )
+  },
+  {
     path: '/health/store',
     meta: { breadcrumb: true },
     name: 'health/store',
@@ -95,6 +115,16 @@ export default [
       /* webpackChunkName: "routes" */
       /* webpackMode: "lazy-once" */
       `@/pages/health/Store.vue`
+    )
+  },
+  {
+    path: '/health/stock',
+    meta: { breadcrumb: true },
+    name: 'health/stock',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/Stock.vue`
     )
   },
   // {
@@ -636,5 +666,35 @@ export default [
       /* webpackMode: "lazy-once" */
       `@/pages/Health/CheckReserve.vue`
     )
-  }
+  },
+  {
+    path: '/health/ExaminationMaster/ExaminationType',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationType',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationType.vue`
+    )
+  },
+  {
+    path: '/health/ExaminationMaster/ExaminationExamination',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationExamination',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationExamination.vue`
+    )
+  },
+  {
+    path: '/health/ExaminationMaster/ExaminationItem',
+    meta: { breadcrumb: true },
+    name: 'health/ExaminationMaster/ExaminationItem',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/pages/health/ExaminationMaster/ExaminationItem.vue`
+    )
+  },
 ];
