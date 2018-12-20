@@ -67,7 +67,7 @@ export default {
   },
   //* methods */
   methods: {
-    init() {
+    init () {
       // 그리드 헤더 설정
       this.counselGridHeaderOptions = [
         { text: '삭제', name: 'delete', width: '40%', type: 'delete' },

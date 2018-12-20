@@ -91,18 +91,22 @@ export default {
 
   }),
   //* Vue lifecycle: created, mounted, destroyed, etc */
-  beforeCreate() {},
-  created() {},
-  beforeMount() {
+  beforeCreate () {
+  },
+  created () {
+  },
+  beforeMount () {
     Object.assign(this.$data, this.$options.data());
     this.init();
     this.getList();
   },
-  mounted() {},
-  beforeDestory() {},
+  mounted () {
+  },
+  beforeDestory () {
+  },
   //* methods */
   methods: {
-    init() {
+    init () {
       this.gridHeaderOptions = [
         { text: "건진종류", name: "c1", width: "20%", align: "left" },
         { text: "건진계획", name: "c2", width: "25%", align: "left" },
@@ -111,7 +115,7 @@ export default {
         { text: "대상자", name: "c5", width: "15%", align: "center" }
       ];
     },
-    getList() {
+    getList () {
       // var baseUrl = this.$format(selectConfig.menus.get.url, this.menuId);
       // var url = this.$backend.getUrl(baseUrl);
       // var self = this;
@@ -142,17 +146,17 @@ export default {
       }, 2000);
     },
     /** button 관련 이벤트 **/
-    btnClearClickedCallback() {
+    btnClearClickedCallback () {
       this.$validator.reset();
       this.$emit("APP_REQUEST_SUCCESS", "초기화 버튼이 클릭 되었습니다.");
     },
-    btnSaveClickedCallback(_result) {
+    btnSaveClickedCallback (_result) {
       this.$emit("APP_REQUEST_SUCCESS", "저장 버튼이 클릭 되었습니다.");
     },
-    btnDeleteClickedCallback(_result) {
+    btnDeleteClickedCallback (_result) {
       this.$emit("APP_REQUEST_SUCCESS", "삭제 버튼이 클릭 되었습니다.");
     },
-    btnClickedErrorCallback(_result) {
+    btnClickedErrorCallback (_result) {
       this.$emit("APP_REQUEST_ERROR", _result);
     }
     /** end button 관련 이벤트 **/

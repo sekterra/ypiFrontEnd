@@ -21,33 +21,36 @@ const Menu =  [
     title: '보건',
     group: 'health',
     component: 'health',
-    icon: 'web',
     icon: 'local_hospital',
     items: [
       { name: 'healthCommon', title: '일반업무', component: 'health/healthCommon' },
       { name: 'healthCounsel', title: '유소견 건강상담', component: 'health/healthCounsel' },
       { name: 'store', title: '입고', component: 'health/store' },
       { name: 'stock', title: '재고 조정', component: 'health/stock' },
-    ]
-  }, 
-  { header: '건진' },
-  {
-    title: '건진예약',
-    group: 'check',
-    component: 'check',
-    icon: 'web',
-    items: [
       { name: 'checkReserve', title: '건진예약', component: 'health/checkReserve' },
-    ]
-  },  
-  {
-    icon: 'local_hospital',
-    items: [
       { name: 'ExaminationType', title: '건진종류', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationType' },
       { name: 'ExaminationExamination', title: '건진검사', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationExamination' },
       { name: 'ExaminationItem', title: '건진항목', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationItem' },
     ]
-  },
+  }, 
+  // { header: '건진' },
+  // {
+  //   title: '건진예약',
+  //   group: 'check',
+  //   component: 'check',
+  //   icon: 'web',
+  //   items: [
+  //     { name: 'checkReserve', title: '건진예약', component: 'health/checkReserve' },
+  //   ]
+  // },  
+  // {
+  //   icon: 'local_hospital',
+  //   items: [
+  //     { name: 'ExaminationType', title: '건진종류', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationType' },
+  //     { name: 'ExaminationExamination', title: '건진검사', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationExamination' },
+  //     { name: 'ExaminationItem', title: '건진항목', icon: 'local_offer', component: 'health/ExaminationMaster/ExaminationItem' },
+  //   ]
+  // },
   // {
   //   title: 'Chat',
   //   group: 'apps',

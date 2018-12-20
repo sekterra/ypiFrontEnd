@@ -170,7 +170,7 @@ export default {
   },
   //* methods */
   methods: {
-    init() {
+    init () {
       // 콤보박스 초기 정보 세팅
       this.comboItems = [
         { key: '', value: '' },
@@ -224,7 +224,7 @@ export default {
           { medicine_nm: '', unit: '', stock: '', rmk: '' },
           { medicine_nm: '', unit: '', stock: '', rmk: '' },
           { medicine_nm: '', unit: '', stock: '', rmk: '' },
-        ],
+        ];
         this.listGridData = [
           { store_dt: '2018-12-19', medicine_nm: '후시딘', unit: 'ml', stock: '100', rmk: '연고' },
         ];

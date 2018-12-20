@@ -44,7 +44,8 @@ module.exports = {
         }],
         'no-return-assign': 0,  //
         'curly': 0, // if {} 를 써야 하는지 여부
-        'no-empty-function': 0
+        'no-empty-function': 0,
+        'quotes': 0
     },
     
 };
